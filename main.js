@@ -18,14 +18,14 @@ export function main(dtoIn) {
   const dtoOut = []
 
   function randomItem(arr){
-    return arr[Math.floor(Math.random()*arr.length)];
+    return arr[Math.floor(Math.random()*arr.length)];//selects random item from any array
   }
   function randomBirthdate(){
     const today = new Date();
-    let minDate= new Date ();
+    let minDate= new Date ();//finds the earliest possible date
     minDate.setFullYear(today.getFullYear()- dtoIn.age.max);
     minDate.setDate(today.getDate() + 1);
-    let maxDate= new Date();
+    let maxDate= new Date();//finds the latest possible date
     maxDate.setFullYear(today.getFullYear() - dtoIn.age.min);
     maxDate.setDate(today.getDate() - 1);
     return new Date(Math.floor(Math.random() * (maxDate.getTime() - minDate.getTime())) + minDate.getTime()).toISOString();
